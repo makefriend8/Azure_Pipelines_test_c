@@ -5,3 +5,4 @@ jobs:
   steps:
   - script: echo hello from Windows
   - task: CMake@1
+  
