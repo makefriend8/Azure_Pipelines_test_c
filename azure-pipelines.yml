@@ -1,15 +1,52 @@
-pool:
-  vmImage: 'vs2017-win2016'
-  
-variables:
-  buildConfiguration: 'Release'
+resources:
+- repo: self
+queue:
+  name: Hosted VS2017
+  demands: 
+  - Cmd
+  - msbuild
+  - visualstudio
 
 steps:
 - task: BatchScript@1
-  displayName: 'Run cmake script'
+  displayName: 'Run script mycmake.bat'
   inputs:
-    filename: 'mycmake.bat'
+    filename: mycmake.bat
+
+
+- task: VSBuild@1
+  displayName: 'Build solution **\*.sln'
+  inputs:
+    solution: '$(Parameters.solution)'
+
+    platform: '$(BuildPlatform)'
+
+    configuration: '$(BuildConfiguration)'
+
+
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
+  inputs:
+    SearchPattern: '**\bin\**\*.pdb'
+
+    PublishSymbols: false
+
+  continueOnError: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+
+    Contents: '**\bin\$(BuildConfiguration)\**'
+
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
 
 
 
-  
