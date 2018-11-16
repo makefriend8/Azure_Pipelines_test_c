@@ -1,3 +1,3 @@
 mkdir myprj
 cd myprj
-cmake ..
+cmake .. -G "Visual Studio 15 Win64"
