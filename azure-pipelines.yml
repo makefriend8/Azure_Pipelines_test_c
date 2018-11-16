@@ -1,8 +1,15 @@
-jobs:
-- job: Windows
-  pool:
-    vmImage: 'vs2017-win2016'
-  steps:
-  - script: echo hello from Windows
-  - task: CMake@1
+pool:
+  vmImage: 'vs2017-win2016'
+  
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: BatchScript@1
+  displayName: 'Run cmake script'
+  inputs:
+    filename: 'mycmake.bat'
+
+
+
   
