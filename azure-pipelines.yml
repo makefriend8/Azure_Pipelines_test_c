@@ -12,6 +12,7 @@ steps:
   displayName: 'Run script mycmake.bat'
   inputs:
     filename: mycmake.bat
+    
 
 
 - task: VSBuild@1
