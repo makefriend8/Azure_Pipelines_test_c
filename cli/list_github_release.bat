@@ -1,0 +1,1 @@
+curl -XGET https://api.github.com/repos/makefriend8/Azure_Pipelines_test_c/releases
