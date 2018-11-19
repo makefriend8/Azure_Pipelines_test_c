@@ -12,7 +12,7 @@ steps:
   displayName: 'Run script mycmake.bat'
   inputs:
     filename: mycmake.bat
-    
+    arguments: '$(githubtoken)'
 
 
 - task: VSBuild@1
