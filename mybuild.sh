@@ -4,3 +4,5 @@ echo ls
 mkdir myprj
 cd myprj
 cmake ..
+ls
+make
