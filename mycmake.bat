@@ -1,3 +1,4 @@
+choco install nsis -y
 @echo helle world
 @echo $(githubtoken)
 @echo %1
