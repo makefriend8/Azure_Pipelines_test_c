@@ -8,3 +8,5 @@ jobs:
     displayName: 'cmake'
   - script: ls myprj
     displayName: 'myprj content'
+  - script: ls
+    displayName: 'current content'
