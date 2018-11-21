@@ -6,9 +6,11 @@ jobs:
   steps:
   - script: echo dir
     displayName: 'current dir'
+  - script: ls
   - script: mkdir myprj
   - script: cd myprj
   - script: echo dir
+  - script: ls
     displayName: 'myprj dir'
   - script: cmake ..
     displayName: 'cmake'
