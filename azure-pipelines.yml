@@ -1,13 +1,15 @@
 # Build NodeJS Express app using Azure Pipelines
+variables:
+  the_token: $(githubtoken)
+
 jobs:
 - job: Linux
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
-  - script: bash mybuild.sh
+  - script: bash mybuild.sh $(githubtoken)
     displayName: 'cmake'
   - script: ls myprj
     displayName: 'myprj content'
   - script: ls
     displayName: 'current content'
-    arguments: '$(githubtoken)'
