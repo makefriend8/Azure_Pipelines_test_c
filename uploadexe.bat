@@ -1,2 +1,2 @@
 @echo %1
-dir myprj
+dir myprjwindows
