@@ -4,7 +4,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
-  - script: mybuild.sh
+  - script: bash mybuild.sh
     displayName: 'cmake'
   - script: make
     displayName: 'make'
