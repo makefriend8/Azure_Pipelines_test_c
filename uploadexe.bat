@@ -1,3 +1,4 @@
+choco install nsis -y
 @echo %1
 dir myprjwindows
 cd myprjwindows
