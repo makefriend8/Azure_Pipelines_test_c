@@ -4,15 +4,14 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
-  - script: echo dir
-    displayName: 'current dir'
   - script: ls
+    displayName: 'current dir'
   - script: mkdir myprj
-  - script: cd myprj
-  - script: echo dir
   - script: ls
     displayName: 'myprj dir'
-  - script: cmake ..
+  - script: |
+      cd myprj;
+      cmake ..;
     displayName: 'cmake'
   - script: make
     displayName: 'make'
