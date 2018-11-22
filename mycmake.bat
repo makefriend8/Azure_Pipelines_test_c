@@ -1,4 +1,5 @@
 curl -O https://superb-sea2.dl.sourceforge.net/project/nsis/NSIS%203/3.03/nsis-3.03-setup.exe
+dir
 nsis-3.03-setup.exe /S
 @echo helle world
 @echo $(githubtoken)
