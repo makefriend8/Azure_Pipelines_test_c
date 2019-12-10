@@ -7,7 +7,7 @@
 #ifdef USE_MYMATH
 #  include "MathFunctions.h"
 #endif
-
+//hello
 int main(int argc, char* argv[])
 {
   if (argc < 2) {
