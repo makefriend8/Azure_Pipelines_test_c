@@ -22,4 +22,4 @@ steps:
    repositoryName: makefriend8/Azure_Pipelines_test_c
    action: edit
    Tag: releaseTmp1
-   assets: $(Build.ArtifactStagingDirectory)/*.exe
+   assets: $(Build.ArtifactStagingDirectory)/myprjwindows/*.exe
