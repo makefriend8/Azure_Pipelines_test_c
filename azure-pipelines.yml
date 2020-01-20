@@ -13,3 +13,29 @@ jobs:
     displayName: 'myprj content'
   - script: ls
     displayName: 'current content'
+- job: Windows
+  resources:
+  - repo: self
+  queue:
+    name: Hosted VS2017
+    demands: 
+    - Cmd
+    - msbuild
+    - visualstudio
+  
+  steps:
+  - task: BatchScript@1
+    displayName: 'Run script mycmake.bat'
+    inputs:
+      filename: mycmake.bat
+      arguments: '$(githubtoken)'
+  
+  
+  - task: GithubRelease@0
+    displayName: 'Create GitHub Release'
+    inputs:
+     githubConnection: github.com_makefriend8
+     repositoryName: makefriend8/Azure_Pipelines_test_c
+     action: edit
+     Tag: releaseTmp1
+     assets: $(Build.Repository.LocalPath)/myprjwindows/*.exe
