@@ -18,5 +18,5 @@ steps:
 - task: GithubRelease@0
   displayName: 'Create GitHub Release'
   inputs:
-   githubConnection: azureSubscription
+   githubConnection: github.com_makefriend8
    repositoryName: makefriend8/Azure_Pipelines_test_c
