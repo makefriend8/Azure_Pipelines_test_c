@@ -20,3 +20,6 @@ steps:
   inputs:
    githubConnection: github.com_makefriend8
    repositoryName: makefriend8/Azure_Pipelines_test_c
+   action: edit
+   Tag: releaseTmp1
+   assets: $(Build.ArtifactStagingDirectory)/*.exe
