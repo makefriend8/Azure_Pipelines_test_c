@@ -15,39 +15,8 @@ steps:
     arguments: '$(githubtoken)'
 
 
-- task: VSBuild@1
-  displayName: 'Build solution **\*.sln'
+- task: GithubRelease@0
+  displayName: 'Create GitHub Release'
   inputs:
-    solution: '$(Parameters.solution)'
-
-    platform: '$(BuildPlatform)'
-
-    configuration: '$(BuildConfiguration)'
-
-
-- task: PublishSymbols@2
-  displayName: 'Publish symbols path'
-  inputs:
-    SearchPattern: '**\bin\**\*.pdb'
-
-    PublishSymbols: false
-
-  continueOnError: true
-
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
-
-    Contents: '**\bin\$(BuildConfiguration)\**'
-
-    TargetFolder: '$(build.artifactstagingdirectory)'
-
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-
-
-
+   githubConnection: makefriend8
+   repositoryName: makefriend8/Azure_Pipelines_test_c
