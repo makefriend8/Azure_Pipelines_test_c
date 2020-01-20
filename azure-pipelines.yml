@@ -19,7 +19,7 @@ jobs:
      githubConnection: github.com_makefriend8
      repositoryName: makefriend8/Azure_Pipelines_test_c
      action: edit
-     Tag: releaseTmp1
+     Tag: ReleaseLinux
      assets: $(Build.Repository.LocalPath)/myprj/Tutorial-1.0.1-Linux.*
 - job: macOS
   pool:
@@ -41,5 +41,5 @@ jobs:
      githubConnection: github.com_makefriend8
      repositoryName: makefriend8/Azure_Pipelines_test_c
      action: create
-     Tag: releaseTmp1
+     Tag: ReleaseWindows
      assets: $(Build.Repository.LocalPath)/myprjwindows/*.exe
