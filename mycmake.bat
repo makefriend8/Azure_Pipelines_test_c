@@ -7,5 +7,5 @@ rem nsis-3.03-setup.exe /S
 mkdir myprjwindows
 cd myprjwindows
 cmake .. -G "Visual Studio 15 Win64"
-cmake --build build64 --config Release
+cmake --build . --config Release
 cpack.exe  --config CPackConfig.cmake
