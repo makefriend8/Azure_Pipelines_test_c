@@ -13,24 +13,20 @@ jobs:
     displayName: 'myprj content'
   - script: ls
     displayName: 'current content'
+- job: macOS
+  pool:
+    vmImage: 'macOS-10.13'
+  steps:
+  - script: echo hello from macOS
 - job: Windows
-  resources:
-  - repo: self
-  queue:
-    name: Hosted VS2017
-    demands: 
-    - Cmd
-    - msbuild
-    - visualstudio
-  
+  pool:
+    vmImage: 'vs2017-win2016'
   steps:
   - task: BatchScript@1
     displayName: 'Run script mycmake.bat'
     inputs:
       filename: mycmake.bat
       arguments: '$(githubtoken)'
-  
-  
   - task: GithubRelease@0
     displayName: 'Create GitHub Release'
     inputs:
