@@ -40,6 +40,6 @@ jobs:
     inputs:
      githubConnection: github.com_makefriend8
      repositoryName: makefriend8/Azure_Pipelines_test_c
-     action: create
+     action: edit
      Tag: ReleaseWindows
      assets: $(Build.Repository.LocalPath)/myprjwindows/*.exe
