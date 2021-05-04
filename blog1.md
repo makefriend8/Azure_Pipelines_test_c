@@ -9,6 +9,7 @@ I have two ideas.I don't know which idea is better, it can be discussed
 #Design Philosophy 2
 Because websocket has no optional fields, it cannot follow the specification SkyWalking Cross Process Propagation Headers Protocol. However websocket has extended field which named Sec-WebSocket-Extensions in [rfc6455](https://tools.ietf.org/html/rfc6455). I want to use this feature to enable websocket services to be tracked by skywalking and change skywalking as little as possible.
 Let's discuss this scenario.
+![image](https://user-images.githubusercontent.com/10958991/116992500-b13f6e80-ad08-11eb-947c-98c38557d178.png)
 
 ## step:1 
 Client send http request with "Sec-WebSocket-Extensions:skywalking-extend-rule".(like [rfc7692](https://tools.ietf.org/html/rfc7692 ))
